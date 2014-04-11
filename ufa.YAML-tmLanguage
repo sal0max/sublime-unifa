@@ -1,0 +1,35 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: UNIFA-Trace
+scopeName: text.unifatrace
+fileTypes: [ufa]
+uuid: 2d7e8365-b522-4a62-9b63-bc737425ae61
+
+patterns:
+# errors
+- name: invalid.illegal.unifatrace
+  match: .*Exception.*
+
+# column 5 (=last)
+- name: string.unquoted.unifatrace
+  match: (?<=^.{54}).*
+- name: string.unquoted.unifatrace # line break -> continue in next line
+  match: ^\s{6}.*
+
+# column 3
+- name: storage.type.unifatrace
+  match: (?<=^.{32})\S{1,17}
+
+# column 2
+- name: constant.other.unifatrace # highlight applications (__anw___)
+  match: (?<=^.{4}\d\s)([a-z]){2}anw[0-9]{3}
+- name: constant.numeric.unifatrace
+  match: (?<=^.{4}\d\s)\w*
+
+# column 1
+- name: comment.line.double-slash.unifatrace
+  match: ^.{4}\d
+
+# column 4
+- name: comment.line.double-slash.unifatrace
+  match: (?<=(.{49}))\d{2,4}(?=[ ])
