@@ -1,6 +1,8 @@
 # .ufa-Syntax
 Syntax highlighting for `.ufa` trace files in [Sublime Text](http://www.sublimetext.com/).
 
+![Screenshot](https://raw.githubusercontent.com/msal/sublime-ufa/raw/screen01.png)
+
 ## Installation
 
 ### Package Control
