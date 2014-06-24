@@ -8,7 +8,7 @@ uuid: 2d7e8365-b522-4a62-9b63-bc737425ae61
 patterns:
 # errors
 - name: invalid.illegal.unifatrace
-  match: .*Exception.*
+  match: .*(Exception|zfamsg\.c).*\n
 
 # column 5 (=last)
 - name: string.unquoted.unifatrace
