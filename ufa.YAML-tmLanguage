@@ -13,7 +13,8 @@ patterns:
 # column 5 (=last)
 - name: string.unquoted.unifatrace
   match: (?<=^.{54}).*
-- name: string.unquoted.unifatrace # line break -> continue in next line
+  # line break -> continue in next line
+- name: string.unquoted.unifatrace 
   match: ^\s{6}.*
 
 # column 3
@@ -21,7 +22,8 @@ patterns:
   match: (?<=^.{32})\S{1,17}
 
 # column 2
-- name: constant.other.unifatrace # highlight applications (__anw___)
+  # highlight applications (__anw___)
+- name: constant.other.unifatrace 
   match: (?<=^.{4}\d\s)([a-z]){2}anw[0-9]{3}
 - name: constant.numeric.unifatrace
   match: (?<=^.{4}\d\s)\w*
