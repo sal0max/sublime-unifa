@@ -1,0 +1,37 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: BS2000 Access Log
+scopeName: text.bs2log
+fileTypes: [bs2log]
+uuid: f3de1996-6925-46f3-8dad-49d799c725c3
+
+patterns:
+- include: '#nonprintables'
+
+# log message
+- name: meta.entry.bs2log
+  begin: (?<=^.{21})(..)
+  beginCaptures:
+    # tac code
+    '1': {name: constant.numeric.bs2log}
+  end: $
+  patterns:
+  - include: '#nonprintables'
+
+# timestamp
+- name: meta.timestamp.bs2log
+  begin: (^.{10})(T)
+  beginCaptures:
+    '1': {name: comment.line.double-slash.bs2log}
+    '2': {name: comment.line.double-slash.bs2log}
+  end: '(\d\d\:\d\d\:\d\d)(Z)'
+  endCaptures:
+    '1': {name: string.unquoted.bs2log}
+    '2': {name: comment.line.double-slash.bs2log}
+
+repository:
+  # non printables
+  nonprintables:
+    patterns:
+    - name: support.constant.bs2log
+      match: \.
