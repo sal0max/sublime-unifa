@@ -12,7 +12,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>.*Exception.*</string>
+			<string>.*(Exception|zfamsg\.c).*\n</string>
 			<key>name</key>
 			<string>invalid.illegal.unifatrace</string>
 		</dict>

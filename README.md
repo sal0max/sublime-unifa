@@ -1,7 +1,6 @@
 # Sublime UNIFA
 A collection of plugins for [Sublime Text](http://www.sublimetext.com/) to ease working in the UNIFA Environment.
 
-
 ## Features
 * Syntax highlighting for `.ufa` trace files.
 * Syntax highlighting for `.bs2log` BS2000 access logs.
