@@ -1,0 +1,1 @@
+* .ufa syntax now highlights 'zfamsg.c' as invalid, just like it did with '*Exception' before.

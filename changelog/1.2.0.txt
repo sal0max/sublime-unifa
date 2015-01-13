@@ -1,0 +1,2 @@
+* This packages purpose is now to provide a set of tools to ease working in the UNIFA environment, instead of just having trace.ufa-syntax.
+* Added syntax highlighting for '.bs2log' BS2000 access logs.
