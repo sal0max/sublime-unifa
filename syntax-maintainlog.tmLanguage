@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>SQL.LOG</string>
+		<string>SQL.WV.LOG</string>
+	</array>
+	<key>name</key>
+	<string>Maintenance-LOG</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>.*(ERROR|ORA\-).*</string>
+			<key>name</key>
+			<string>invalid.illegal.maintainlog</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=.{180})([0-9]{2}\.[0-9]{2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2})</string>
+			<key>name</key>
+			<string>constant.numeric.maintainlog</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=^[^\#0-9].{49}).{,129}</string>
+			<key>name</key>
+			<string>string.unquoted.maintainlog</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[^\#0-9].{,49}</string>
+			<key>name</key>
+			<string>comment.line.double-slash.maintainlog</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=^[0-9]{2}\.[0-9]{2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2})\s\w{,29}</string>
+			<key>name</key>
+			<string>comment.line.double-slash.maintainlog</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=^[^\#].{49}).*</string>
+			<key>name</key>
+			<string>string.unquoted.maintainlog</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[0-9]{2}\.[0-9]{2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2}</string>
+			<key>name</key>
+			<string>constant.numeric.maintainlog</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.maintainlog</string>
+	<key>uuid</key>
+	<string>331e55fb-39fa-4b64-9536-21746305b7f2</string>
+</dict>
+</plist>

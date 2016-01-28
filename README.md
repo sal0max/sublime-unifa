@@ -4,6 +4,7 @@ A collection of plugins for [Sublime Text](http://www.sublimetext.com/) to ease 
 ## Features
 * Syntax highlighting for `.ufa` trace files.
 * Syntax highlighting for `.bs2log` BS2000 access logs.
+* Syntax highlighting for `.SQL.LOG` und `.SQL.WV.LOG` Maintain-DB logs.
 
 ### Screenshots
 ![Screenshot](https://raw.githubusercontent.com/msal/sublime-ufa/raw/screen01.png)
