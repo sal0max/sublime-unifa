@@ -1,0 +1,30 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Maintenance-LOG
+scopeName: text.maintainlog
+fileTypes: [SQL.LOG,SQL.WV.LOG]
+uuid: 331e55fb-39fa-4b64-9536-21746305b7f2
+
+patterns:
+# errors
+- name: invalid.illegal.maintainlog
+  match: .*(ERROR|ORA\-).*
+# column 3
+- name: constant.numeric.maintainlog
+  match: (?<=.{180})([0-9]{2}\.[0-9]{2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2})
+  # column 2
+- name: string.unquoted.maintainlog
+  match: (?<=^[^\#0-9].{49}).{,129}
+# column 1
+- name: comment.line.double-slash.maintainlog
+  match: ^[^\#0-9].{,49}
+  # BUSSARD Statistik column 3
+- name: comment.line.double-slash.maintainlog
+  match: (?<=^[0-9]{2}\.[0-9]{2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2})\s\w{,29}
+# BUSSARD Statistik column 2
+- name: string.unquoted.maintainlog
+  match: (?<=^[^\#].{49}).*
+# BUSSARD Statistik column 1 -> date
+- name: constant.numeric.maintainlog
+  match: ^[0-9]{2}\.[0-9]{2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2}
+...
