@@ -1,0 +1,54 @@
+%YAML1.2
+---
+file_extensions:
+  - ulm
+scope: text.ufalistmsg
+name: ufalistmsg (UNIFA)
+contexts:
+  main:
+    - match: 'RMS_PANIC|RMS_ADMERR'
+      scope: invalid.ufalistmsg
+      push: critical_error
+
+    - match: 'RMS_ERROR'
+      scope: entity.name.function.ufalistmsg
+
+    - match: ': '
+      scope: punctuation.definition.string.begin.ufalistmsg
+      push: error_description
+
+    - match: '(RMS_NOTIFY|RMS_INFO|-- End of List --)'
+      scope: punctuation.definition.comment.ufalistmsg
+      push: line_comment
+
+    - match: '\b(from|in)\b'
+      scope: comment.ufalistmsg
+
+    # Datetime
+    - match: '\s\d\d\.\d\d\.\d\d\s\d\d:\d\d:\d\d(?=\sfrom)'
+      scope: constant.numeric.ufalistmsg
+
+    # Host
+    - match: '\b( U[0-9A-Za-z]+ )\b'
+      scope: constant.numeric.ufalistmsg
+
+    # PID
+    - match: '(?<=in\s).*?\)(?=:)'
+      scope: keyword.control.ufalistmsg
+
+  critical_error:
+    - meta_scope: invalid.ufalistmsg
+    - match: $
+      scope: invalid.ufalistmsg
+      pop: true
+
+  error_description:
+    #- meta_scope: string.quoted.double.ufalistmsg
+    - match: $
+      scope: punctuation.definition.string.end.ufalistmsg
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.ufalistmsg
+    - match: $
+      pop: true
