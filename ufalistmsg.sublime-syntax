@@ -4,6 +4,7 @@ file_extensions:
   - ulm
 scope: text.ufalistmsg
 name: ufalistmsg (UNIFA)
+first_line_match: (RMS_NOTIFY|RMS_INFO|RMS_PANIC|RMS_ADMERR|RMS_ERROR).*
 contexts:
   main:
     - match: 'RMS_PANIC|RMS_ADMERR'
