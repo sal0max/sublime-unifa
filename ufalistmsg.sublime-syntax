@@ -30,7 +30,7 @@ contexts:
       scope: constant.numeric.ufalistmsg
 
     # Host
-    - match: '\b( U[0-9A-Za-z]+ )\b'
+    - match: '(?<=\d\d from )\w+( [\w\.]+)?(?= in )'
       scope: constant.numeric.ufalistmsg
 
     # PID
