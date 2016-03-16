@@ -12,7 +12,7 @@ A collection of tools for [Sublime Text](http://www.sublimetext.com/) to ease wo
 
 ### Plugin: `trace.ufa`-indenter
 
-`trace.ufa` files are hard-wrapped at 80 characters per line. The indenter removes those wraps without messing up pre-formated blocks (like interface descriptions).
+`trace.ufa` files are hard-wrapped at 80 characters per line. The indenter removes those wraps without messing up pre-formatted blocks (like interface descriptions).
 
 * It can be accessed
    * via the Command Palette and typing `UNIFA: Indent UNIFA-Trace`
