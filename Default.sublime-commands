@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "UNIFA: Indent UNIFA-Trace",
+        "command": "indent_unifatrace"
+    }
+]
