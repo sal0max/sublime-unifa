@@ -23,7 +23,7 @@ class IndentUnifatraceCommand(sublime_plugin.TextCommand):
 
 
    def indent(self, s):
-        return re.sub(r"(?<=.{79}[^}])\n\ {6}", "", s)
+      return re.sub(r"(?<=.{79}[^}])\n\ {6}", "", s)
 
 
    def is_enabled(self):
