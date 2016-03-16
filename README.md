@@ -1,13 +1,27 @@
 # Sublime UNIFA
-A collection of plugins for [Sublime Text](http://www.sublimetext.com/) to ease working in the UNIFA Environment.
+A collection of tools for [Sublime Text](http://www.sublimetext.com/) to ease working in the UNIFA Environment.
 
 ## Features
-* Syntax highlighting for `.ufa` trace files.
-* Syntax highlighting for `ufalistmsg`.
-* Syntax highlighting for `.bs2log` BS2000 access logs.
-* Syntax highlighting for `.SQL.LOG` and `.SQL.WV.LOG` Maintain-DB logs.
 
-### Screenshots
+### Syntax highlighting for
+
+* `trace.ufa` files
+* `ufalistmsg` output
+* `.bs2log` BS2000 access logs
+* `.SQL.LOG` and `.SQL.WV.LOG` Maintain-DB logs
+
+### Plugin: `trace.ufa`-indenter
+
+`trace.ufa` files are hard-wrapped at 80 characters per line. The indenter removes those wraps without messing up pre-formated blocks (like interface descriptions).
+
+* It can be accessed
+   * via the Command Palette and typing `UNIFA: Indent UNIFA-Trace`
+   * or in the menu: `Selection > Format > Indent UNIFA-Trace`
+* When no text is selected the entire file will get formatted.  
+  If some text is selected, only that part will get indented.
+
+
+## Screenshots
 ![Screenshot](https://raw.githubusercontent.com/msal/sublime-ufa/raw/screen02.png)
 
 
