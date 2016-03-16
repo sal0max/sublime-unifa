@@ -1,0 +1,25 @@
+%YAML1.2
+---
+file_extensions:
+  - ufa
+scope: text.unifatrace
+name: UNIFA-Trace
+
+contexts:
+  main:
+    # Major Error
+    - match: '.*(Exception|zfamsg\.c|FEHLER\:).*\n'
+      scope: invalid.illegal.unifatrace
+    
+    # Minor Error
+    - match: 'INVALID!!!'
+      scope: invalid.deprecated.unifatrace
+
+    # Column 1-4
+    - match: '(^.{4}\d)\ (\w+)\ +(\S{1,17})\ +(\d{2,4})'
+      captures:
+        1: comment.line.double-slash.unifatrace
+        2: constant.numeric.unifatrace
+        3: storage.type.unifatrace
+        4: comment.line.double-slash.unifatrace
+      # 5: string.unquoted.unifatrace
