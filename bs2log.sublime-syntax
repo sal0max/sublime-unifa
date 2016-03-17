@@ -1,0 +1,36 @@
+%YAML1.2
+---
+file_extensions:
+  - bs2log
+scope: text.bs2log
+name: BS2000 Access Log (UNIFA)
+
+contexts:
+  main:
+    - match: '^\d'
+      push: datetime
+    - match: '\ '
+      push: message
+
+
+  datetime:
+    - meta_scope: comment.line.double-slash.bs2log
+    - match: 'T'
+      scope: comment.line.double-slash.bs2log
+    - match: '\d\d:\d\d:\d\d'
+      scope: string.unquoted.bs2log
+    - match: 'Z'
+      scope: comment.line.double-slash.bs2log
+      pop: true
+
+
+  message:
+    - meta_scope: meta.entry.bs2log
+    - match: '(\d\d)(\ .*$)'
+      captures:
+        1: constant.numeric.bs2log
+        2: meta.entry.bs2log
+      pop: true
+    - match: '.*'
+      scope: invalid
+      pop: true
