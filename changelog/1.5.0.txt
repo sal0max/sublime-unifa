@@ -1,0 +1,19 @@
+*****************************************
+* Sublime-UNIFA: Changelog 1.5.0        *
+*****************************************
+
+- New Plugin: trace.ufa-indenter:
+
+  trace.ufa files are hard-wrapped at 80 characters per line. The indenter
+  removes those wraps without messing up pre-formatted blocks (like interface
+  descriptions).
+
+  It can be accessed
+    - via the Command Palette and typing `UNIFA: Indent UNIFA-Trace`
+    - or in the menu: `Selection > Format > Indent UNIFA-Trace`
+
+  When no text is selected the entire file will get formatted.
+  If some text is selected, only that part will get indented.
+
+
+- Minor adjustments to bs2000 & trace.ufa syntax.
