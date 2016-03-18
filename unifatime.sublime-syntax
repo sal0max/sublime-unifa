@@ -1,0 +1,18 @@
+%YAML1.2
+---
+file_extensions:
+  - time
+scope: text.unifatime
+name: UNIFA-TimeTrace
+
+contexts:
+  main:
+    # Column 1-4
+    - match: '(^.{4}\d)\ (\w+)\ +(\S{1,17})\ +(\d{2,4})\ ([0-9]{2}\.[0-9]{2}\.[0-9]{4}\ \-\-\-\ [0-9]{2}:[0-9]{2}:[0-9]{2})\ .+(ppid:\ .{4}\d)'
+      captures:
+        1: comment.line.double-slash.unifatime
+        2: constant.numeric.unifatime
+        3: storage.type.unifatime
+        4: comment.line.double-slash.unifatime
+        5: string.unquoted.unifatime
+        6: comment.line.double-slash.unifatime
