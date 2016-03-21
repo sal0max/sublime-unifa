@@ -2,7 +2,7 @@
 ---
 file_extensions: SQL.LOG, SQL.WV.LOG
 scope: text.maintainlog
-name: DB-Maintain-LOG
+name: DB Maintain-Log (UNIFA)
 
 contexts:
   main:
