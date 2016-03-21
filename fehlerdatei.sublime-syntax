@@ -1,0 +1,53 @@
+%YAML1.2
+---
+name: Fehlerdatei (UNIFA)
+scope: text.unifafehler
+first_line_match: '\$quote\ \"$'
+
+contexts:
+  main:
+    - match: '^\$quote'
+      push: quote
+    - match: '^\$set'
+      push: set
+    - match: '^\d+'
+      scope: variable.unifafehler
+      push: number
+    - match: '^\$'
+      push: comment
+
+# ==============================================
+
+  quote:
+    - meta_scope: storage.type.unifafehler
+    - match: '(?<=\ ).*$'
+      scope: variable.unifafehler
+      pop: true
+
+  set:
+    - meta_scope: storage.type.unifafehler
+    - match: '\d+'
+      scope: variable.unifafehler
+      pop: true
+
+  comment:
+    - meta_scope: comment.unifafehler.unifafehler
+    - match: '$'
+      pop: true
+
+# ==============================================
+
+  number:
+    - match: '(?<=\ )\"'
+      push: text
+    - match: '\"'
+      scope: invalid.illegal.unifafehler
+    - match: '$'
+      pop: true
+
+  text:
+    - meta_scope: string.quoted.double.unifafehler
+    - match: '%\d+\$s'
+      scope: constant.character.escape.unifafehler
+    - match: '"'
+      pop: true
