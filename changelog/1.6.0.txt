@@ -1,0 +1,7 @@
+*****************************************
+* Sublime-UNIFA: Changelog 1.6.0        *
+*****************************************
+
+- New Syntx: GNU Message Catalog files, used by unifamsg.
+- Internal change: Rearranged the package structure.
+  If you had open files which used one of this packages syntaxes you likely got an error message. Just set the syntax to those files again.
