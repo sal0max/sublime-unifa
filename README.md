@@ -7,6 +7,7 @@ A collection of tools for [Sublime Text](http://www.sublimetext.com/) to ease wo
 
 * `trace.ufa` files
 * `ufalistmsg` output
+* [`Message Catalog`](http://www.gnu.org/software/libc/manual/html_node/The-message-catalog-files.html) files, used by ufalistmsg
 * `.bs2log` BS2000 access logs
 * `.SQL.LOG` and `.SQL.WV.LOG` Maintain-DB logs
 
