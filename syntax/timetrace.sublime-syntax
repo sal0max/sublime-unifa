@@ -8,7 +8,7 @@ first_line_match: .*(callZFA_Call|doBind|doUnbd).*
 
 contexts:
   main:
-    - match: '^(\d{5}) (\w+).*--- (\d{2}:\d{2}:\d{2}) --'
+    - match: '^(.{4}\d) (\w+).*--- (\d{2}:\d{2}:\d{2}) --'
       captures:
         1: constant.numeric.unifatimetrace
         2: entity.name.function.unifatimetrace
@@ -29,4 +29,3 @@ contexts:
         1: comment.ufalistmsg
         2: comment.ufalistmsg
         3: comment.ufalistmsg
-
