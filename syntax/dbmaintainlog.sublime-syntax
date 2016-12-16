@@ -1,6 +1,8 @@
 %YAML1.2
 ---
-file_extensions: SQL.LOG, SQL.WV.LOG
+file_extensions:
+  - SQL.LOG
+  - SQL.WV.LOG
 scope: text.maintainlog
 name: DB Maintain-Log (UNIFA)
 
