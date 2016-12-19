@@ -11,6 +11,13 @@ A collection of tools for [Sublime Text](http://www.sublimetext.com/) to ease wo
 * `.bs2log` BS2000 access logs
 * `.SQL.LOG` and `.SQL.WV.LOG` Maintain-DB logs
 
+### Snippets
+
+Snippets for code-section and code-subsection -headers.
+
+These are activated via `/*==<tab>` or `/*--<Tab>` respectively.
+
+
 ### Plugin: `trace.ufa`-indenter
 
 `trace.ufa` files are hard-wrapped at 80 characters per line. The indenter removes those wraps without messing up pre-formatted blocks (like interface descriptions).
@@ -18,7 +25,7 @@ A collection of tools for [Sublime Text](http://www.sublimetext.com/) to ease wo
 * It can be accessed
    * via the Command Palette and typing `UNIFA: Indent UNIFA-Trace`
    * or in the menu: `Selection > Format > Indent UNIFA-Trace`
-* When no text is selected the entire file will get formatted.  
+* When no text is selected the entire file will get formatted.
   If some text is selected, only that part will get indented.
 
 

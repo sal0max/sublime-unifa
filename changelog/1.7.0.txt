@@ -1,0 +1,5 @@
+*****************************************
+* Sublime-UNIFA: Changelog 1.7.0        *
+*****************************************
+
+- New Snippets: UNIFA C-Style section and sub section headers added
