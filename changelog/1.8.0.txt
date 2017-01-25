@@ -1,0 +1,175 @@
+*****************************************
+* Sublime-UNIFA: Changelog 1.8.0        *
+*****************************************
+
+- New Plugin: UNIFA-Map-List-String-Representation-indenter
+
+  It can be accessed
+    - via the Command Palette and typing `UNIFA: Indent UNIFA-MLS representation`
+    - or in the menu: `Selection > Format > Indent UNIFA-MLS representation`
+
+  When no text is selected the entire file will get formatted.
+  If some text is selected, only that part will get indented.
+
+
+  Example:
+
+    ( url=http://XXXXXXX:8080/Gateway/Http/ANWGW/, document=[{PRE=, TYP=PUM, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={auftragsOrt=speicher, auftragsVersion=000016, rueckgabeVersion=000016}, LCN=Auftrag, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={id=9876RUMPP, rolle=3F}, LCN=BBBBB, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {LCN=BBBBB, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={anzahl=100, startPos=1}, LCN=EEEEE, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {LCN=EEEEE, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={}, LCN=VZ, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {CDT=2014, TYP=CDT}, {LCN=VZ, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {PRE=, TYP=PUM, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={}, LCN=xxxxxAuftrag, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={}, LCN=XxxYYYYYYY, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={art=9}, LCN=YYYYYYY, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {LCN=YYYYYYY, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={}, LCN=IdNr, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {CDT=67890123499, TYP=CDT}, {LCN=IdNr, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={}, LCN=IdNr, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {CDT=12345678901, TYP=CDT}, {LCN=IdNr, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {ATT={}, LCN=ArbNStNr, TYP=SEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {CDT=0987654321098, TYP=CDT}, {LCN=ArbNStNr, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {LCN=XxxYYYYYYY, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {LCN=xxxxxAuftrag, TYP=EEL, URI=http://www.xxxxx.de/v16/Schnittstelle/XML}, {LCN=Auftrag}], reportWhitespace=<key 'WSP' not found>, reportAttributeNS=<key 'ANS' not found>, indentAmount=<key 'IND' not found>, head=X000000000XxxxxXX 000016, size=24, tail=### )
+
+  transforms to this:
+  (Or just try it out yourself! Select the above text block and hit the command.)
+
+    (
+      url=http://XXXXXXX:8080/Gateway/Http/ANWGW/,
+      document=[{
+            PRE=,
+            TYP=PUM,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={
+               auftragsOrt=speicher,
+               auftragsVersion=000016,
+               rueckgabeVersion=000016}
+            ,
+            LCN=Auftrag,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={
+               id=9876RUMPP,
+               rolle=3F}
+            ,
+            LCN=BBBBB,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            LCN=BBBBB,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={
+               anzahl=100,
+               startPos=1}
+            ,
+            LCN=EEEEE,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            LCN=EEEEE,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={},
+            LCN=VZ,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            CDT=2014,
+            TYP=CDT}
+         ,
+         {
+            LCN=VZ,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            PRE=,
+            TYP=PUM,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={},
+            LCN=xxxxxAuftrag,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={},
+            LCN=XxxYYYYYYY,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={
+               art=9}
+            ,
+            LCN=YYYYYYY,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            LCN=YYYYYYY,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={},
+            LCN=IdNr,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            CDT=67890123499,
+            TYP=CDT}
+         ,
+         {
+            LCN=IdNr,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={},
+            LCN=IdNr,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            CDT=12345678901,
+            TYP=CDT}
+         ,
+         {
+            LCN=IdNr,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            ATT={},
+            LCN=ArbNStNr,
+            TYP=SEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            CDT=0987654321098,
+            TYP=CDT}
+         ,
+         {
+            LCN=ArbNStNr,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            LCN=XxxYYYYYYY,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            LCN=xxxxxAuftrag,
+            TYP=EEL,
+            URI=http://www.xxxxx.de/v16/Schnittstelle/XML}
+         ,
+         {
+            LCN=Auftrag}
+         ],
+      reportWhitespace=<key 'WSP' not found>,
+      reportAttributeNS=<key 'ANS' not found>,
+      indentAmount=<key 'IND' not found>,
+      head=X000000000XxxxxXX 000016,
+      size=24,
+      tail=### )

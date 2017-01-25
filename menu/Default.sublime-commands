@@ -2,5 +2,9 @@
     {
         "caption": "UNIFA: Indent UNIFA-Trace",
         "command": "indent_unifatrace"
+    },
+    {
+        "caption": "UNIFA: Indent UNIFA-MLS representation",
+        "command": "indent_unifa_mls"
     }
 ]

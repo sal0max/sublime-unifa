@@ -41,7 +41,7 @@ Installation through [package control](http://wbond.net/sublime_packages/package
 
 
 ## License
-**Copyright 2014-2016 MSal.**
+**Copyright 2014-2017 MSal.**
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

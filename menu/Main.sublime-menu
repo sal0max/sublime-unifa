@@ -12,6 +12,10 @@
                     {
                         "caption": "Indent UNIFA-Trace",
                         "command": "indent_unifatrace"
+                    },
+                    {
+                        "caption": "Indent UNIFA-MLS representation",
+                        "command": "indent_unifa_mls"
                     }
                 ]
             }
