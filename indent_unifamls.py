@@ -12,15 +12,19 @@ class IndentUnifaMlsCommand(sublime_plugin.TextCommand):
          for region in view.sel():
             if not region.empty():
                s = view.substr(region)
-               s = re.sub('(?<=[\(\[\{\)\]\}\,])\s+', '', s)
-               s = self.indent(s)
+               s = re.sub('(((?<=\n)|(^))\ {6})', '', s)     # remove leading 6 spaces
+               s = s.replace('\n', '')                       # remove newlines
+               s = re.sub('(?<=[\(\[\{\)\]\}\,])\s+', '', s) # remove all whitespace between elements
+               s = self.indent(s)                            # finally indent
                view.replace(edit, region, s)
       # else format all text
       else:
          alltextreg = sublime.Region(0, view.size())
          s = view.substr(alltextreg)
-         s = re.sub('(?<=[\(\[\{\)\]\}\,])\s+', '', s)
-         s = self.indent(s)
+         s = re.sub('(((?<=\n)|(^))\ {6})', '', s)     # remove leading 6 spaces
+         s = s.replace('\n', '')                       # remove newlines
+         s = re.sub('(?<=[\(\[\{\)\]\}\,])\s+', '', s) # remove all whitespace between elements
+         s = self.indent(s)                            # finally indent
          view.replace(edit, alltextreg, s)
 
 
