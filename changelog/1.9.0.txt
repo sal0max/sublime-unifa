@@ -1,0 +1,5 @@
+*****************************************
+* Sublime-UNIFA: Changelog 1.9.0        *
+*****************************************
+
+- New Syntax: 'UNIFA MLS' (UNIFA Map/List/String), as written by Java 'toString()'.

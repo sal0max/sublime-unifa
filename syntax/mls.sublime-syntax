@@ -1,0 +1,30 @@
+%YAML 1.2
+---
+scope: text.unifa-mls
+name: UNIFA-MLS
+
+contexts:
+  main:
+    - match: '='                              # nach '=' kommt ein Value
+      scope: variable.other.unifa-mls
+      push: value
+    - match: ','                              # Kommas #1
+      scope: string.unquoted.unifa-mls
+    - match: '({|})'                          # geschweifte Klammern #1
+      scope: keyword.operator.unifa-mls
+      pop: true
+    - match: '(\[|\])'                        # eckige Klammern #1
+      scope: keyword.control.unifa-mls
+      pop: true
+
+  value:
+    - meta_scope: constant.language.unifa-mls # Value
+    - match: ','                              # Kommas #2
+      scope: string.unquoted.unifa-mls
+      pop: true
+    - match: '({|})'                          # geschweifte Klammern #2
+      scope: keyword.operator.unifa-mls
+      pop: true
+    - match: '(\[|\])'                        # eckige Klammern #2
+      scope: keyword.control.unifa-mls
+      pop: true
