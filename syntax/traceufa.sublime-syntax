@@ -10,13 +10,13 @@ contexts:
     # Major Error
     - match: '.*(Exception|zfamsg\.c|FEHLER\:).*\n'
       scope: invalid.illegal.unifatrace
-    
+
     # Minor Error
     - match: 'INVALID!!!'
       scope: invalid.deprecated.unifatrace
 
     # Column 1-4
-    - match: '(^.{4}\d)\ (\S{1,25})\ +(\S{1,17})\ +(\d{2,4})'
+    - match: '(^.{4,6}\d)\ (\S{1,25})\ +(\S{1,21})\ +(\d{2,4})'
       captures:
         1: comment.line.double-slash.unifatrace
         2: constant.numeric.unifatrace
