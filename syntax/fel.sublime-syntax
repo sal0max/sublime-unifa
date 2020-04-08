@@ -1,0 +1,29 @@
+%YAML 1.2
+---
+file_extensions:
+  - fel
+scope: text.feldat
+name: UNIFA-Fehlerbeschreibungsdatei
+
+contexts:
+  main:
+    # comment
+    - match: '^\*.*'
+      scope: comment.line.feldat
+
+    # fel entry
+    - match: '^\d{11}\ '
+      scope: constant.numeric.feldat
+      push: entry
+
+    # invalid
+    - match: '.*'
+      scope: invalid.feldat
+
+  entry:
+    # variable
+    - match: '\$\(\d+\)'
+      scope: variable.feldat
+    # eol
+    - match: '$'
+      pop: true

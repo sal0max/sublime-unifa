@@ -1,0 +1,5 @@
+*****************************************
+* Sublime-UNIFA: Changelog 1.12.0       *
+*****************************************
+
+- New Syntax: 'UNIFA-Fehlerbeschreibungsdatei'
