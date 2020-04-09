@@ -3,7 +3,7 @@
 file_extensions:
   - fel
 scope: text.feldat
-name: UNIFA-Fehlerbeschreibungsdatei
+name: UNIFA-Fehlerbeschreibungsdatei (*.fel)
 
 contexts:
   main:
@@ -20,10 +20,15 @@ contexts:
     - match: '.*'
       scope: invalid.feldat
 
+
   entry:
+    # too long (> 200)
+    - match: '.{201,}'
+      scope: invalid.feldat
+      pop: true
     # variable
     - match: '\$\(\d+\)'
-      scope: variable.feldat
+      scope: keyword.control.feldat
     # eol
     - match: '$'
       pop: true
